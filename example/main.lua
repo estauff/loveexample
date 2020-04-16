@@ -1,12 +1,15 @@
 function love.load()
   x = 100
   y = 100
+  accel = 10
+  velocity = 0
 end
 
 function love.update(dt)
   if love.keyboard.isDown('right') then
-    x = x + 10*dt
+    velocity = velocity + accel*dt
   end
+  x = x + velocity*dt
 end
 
 function love.draw(dt)
