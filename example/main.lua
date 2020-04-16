@@ -4,6 +4,8 @@ slimer = love.graphics.newImage("Slime.png")
 function love.load()
   x = 100
   y = 100
+  accel = 10
+  velocity = 0
 end
 
 function love.update(dt)
@@ -19,6 +21,7 @@ function love.update(dt)
   if love.keyboard.isDown('down') then
     y = y + 100*dt
   end
+  x = x + velocity*dt
 end
 
 function love.draw(dt)
